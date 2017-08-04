@@ -1,7 +1,7 @@
 <div class="content column is-11">
  <table  class="contacts">
     <tbody>
-      <tr routerLink="/contact">
+    <tr (click)="showContact($event)">
         <td>
             <figure class="image is-48x48 hide-on-hover">
                 <img src="http://bulma.io/images/placeholders/48x48.png">
@@ -9,7 +9,7 @@
             <div class="field show-on-hover user-check">
                 <div class="control">
                     <label class="checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" (click)="$event.stopPropagation();selectContact($event)">
                     </label>
                 </div>
             </div>
@@ -25,8 +25,8 @@
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
             </a>
         </td>
-      </tr>
-    <tr class="selected"  routerLink="/contact">
+    </tr>
+    <tr (click)="showContact($event)">
         <td>
             <figure class="image is-48x48 hide-on-hover">
                 <img src="http://bulma.io/images/placeholders/48x48.png">
@@ -34,7 +34,7 @@
             <div class="field show-on-hover user-check">
                 <div class="control">
                     <label class="checkbox">
-                        <input type="checkbox">
+                        <input type="checkbox" (click)="$event.stopPropagation();selectContact($event)">
                     </label>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
             </a>
         </td>
-      </tr>
+    </tr>
     </tbody>
   </table>
  </div>
