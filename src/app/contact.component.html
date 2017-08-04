@@ -1,4 +1,4 @@
-<div class="contact-container">
+<div class="contact-container" *ngIf="contact">
     <div class="header">
         <div class="header-item contact-img">
             <figure class="image is-128x128">
@@ -6,14 +6,14 @@
             </figure>
         </div>
         <div class="header-item">
-            <h2 class="title">Johnathan Wick</h2>
+            <h2 class="title">{{contact.name}}</h2>
         </div>
         <div class="header-item">
-            <a class="contact-control">
+            <a class="contact-control" (click)="$event.stopPropagation();deleteContact()">
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
             </a>
-            <a class="contact-control" routerLink="/edit">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
+            <a class="contact-control" (click)="editContact()">
+                <i class="fa fa-pencil" aria-hidden="true" ></i>
             </a>
         </div>
     </div>
@@ -24,7 +24,7 @@
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 </div>
                 <div class="cell">
-                    reachatjohn@gmail.com
+                    {{contact.email}}
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                     <i class="fa fa-phone" aria-hidden="true"></i>
                 </div>
                 <div class="cell">
-                    +919823429544
+                    {{contact.phone}}
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                     <i class="fa fa-info-circle" aria-hidden="true"></i>
                 </div>
                 <div class="cell">
-                    Family
+                    {{contact.category}}
                 </div>
             </div>
         </div>

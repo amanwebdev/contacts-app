@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
+import { Router }  from '@angular/router';
 
 @Component({
   selector: 'register',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.form.css']
 })
 export class RegisterForm {
-  
+  signupInfo={username:'', password:'', confirmPassword:'', email:''}
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  public register(){
+    this.authService.register(this.signupInfo).subscribe((registered)=>{
+      if(registered){
+        this.router.navigateByUrl('/login')
+      }
+    });
+  }
 }

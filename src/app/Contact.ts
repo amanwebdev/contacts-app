@@ -1,0 +1,11 @@
+export class Contact{
+    public selected:boolean=false
+    constructor(
+        public id:number=null,
+        public name:string='',
+        public email:string='',
+        public phone:string='',
+        public category:string=''
+    )
+    {}
+}

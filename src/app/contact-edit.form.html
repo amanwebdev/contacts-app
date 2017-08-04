@@ -1,59 +1,65 @@
-<div class="contact-container">
-    <div class="field">
-        <figure class="image is-128x128">
-            <img src="http://bulma.io/images/placeholders/128x128.png">
-        </figure>
-    </div>
-
-    
-
-    <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Name">
+<div class="contact-container" *ngIf="contact">
+    <form (ngSubmit)="saveContact()" #contactForm="ngForm">
+        <div class="field">
+            <figure class="image is-128x128">
+                <img src="http://bulma.io/images/placeholders/128x128.png">
+            </figure>
         </div>
-    </div>
 
-    <div class="field">
-        <label class="label">Phone No.</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Phone No.">
-        </div>
-    </div>
-
-    <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="text" placeholder="Email" value="hello@">
-            <span class="icon is-small is-left">
-      <i class="fa fa-envelope"></i>
-    </span>
-            <span class="icon is-small is-right">
-      <i class="fa fa-warning"></i>
-    </span>
-        </div>
-        <p class="help is-danger">This email is invalid</p>
-    </div>
-
-    <div class="field">
-        <label class="label">Category</label>
-        <div class="control">
-            <div class="select">
-                <select>
-        <option>Family</option>
-        <option>Friend</option>
-        <option>Professional</option>
-      </select>
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Name" [(ngModel)]="contact.name" name="name"
+               #name="ngModel">
             </div>
         </div>
-    </div>
 
-    <div class="field is-grouped">
-        <div class="control">
-            <button class="button is-primary" routerLink="/" (click)="saveContact()">Save</button>
+        <div class="field">
+            <label class="label">Phone No.</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Phone No." [(ngModel)]="contact.phone" name="phone"
+               #phone="ngModel">
+            </div>
         </div>
-        <div class="control">
-            <button class="button is-link" routerLink="/">Cancel</button>
+
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left has-icons-right">
+                <input class="input is-danger" type="text" placeholder="Email" value="hello@" 
+                [(ngModel)]="contact.email" name="email"
+               #email="ngModel">
+
+                <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                    <i class="fa fa-warning"></i>
+                 </span>
+            </div>
+            <p class="help is-danger">This email is invalid</p>
         </div>
-    </div>
+
+        <div class="field">
+            <label class="label">Category</label>
+            <div class="control">
+                <div class="select">
+                    <select class="form-control" required [(ngModel)]="contact.category" name="category" #category="ngModel">
+                        <option value="0">Family</option>
+                        <option value="1">Friend</option>
+                        <option value="2">Professional</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="field is-grouped">
+            <div class="control">
+                <button class="button is-primary" type="submit" [disabled]="!contactForm.form.valid">Save</button>
+            </div>
+            <div class="control">
+                <button class="button is-link" routerLink="/">Cancel</button>
+            </div>
+        </div>
+    </form>
+    
 </div>

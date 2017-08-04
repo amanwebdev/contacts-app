@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router }  from '@angular/router';
+import { AuthService } from './auth.service';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  
+  constructor(private authService: AuthService, 
+    private contactService:ContactService, private router: Router) {}
+
+  public logout(){
+    this.authService.logout();
+    this.router.navigateByUrl('/login')
+  }
+
+  searchText:string;
+
+  public filterContactsByText(){
+    console.log('search text '+this.searchText);
+    this.contactService.searchTextSubject.next(this.searchText);
+  }
 }

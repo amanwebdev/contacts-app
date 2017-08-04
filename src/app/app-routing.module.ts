@@ -7,28 +7,42 @@ import { ContactsComponent } from './contacts.component'
 import { ContactComponent } from './contact.component'
 import { LoginForm} from './login.form';
 import { RegisterForm} from './register.form';
+import { AuthGuard }  from './auth-guard.service';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: ContactsComponent
+    component: ContactsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'edit',
-    component: ContactEditForm
+    component: ContactEditForm,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit/:id',
+    component: ContactEditForm,
+    canActivate: [AuthGuard]
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    canActivate: [AuthGuard]    
   },
   {
-    path: 'login',
-    component: LoginForm
-  },
-  {
-    path: 'register',
-    component: RegisterForm
+    path: 'contact/:id',
+    component: ContactComponent,
+    canActivate: [AuthGuard]    
   }
+  // {
+  //   path: 'login',
+  //   component: LoginForm
+  // },
+  // {
+  //   path: 'register',
+  //   component: RegisterForm
+  // }
 ];
 
 @NgModule({

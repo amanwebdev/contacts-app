@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { ToasterConfig } from 'angular2-toaster';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,5 @@ import { ToasterConfig } from 'angular2-toaster';
 export class AppComponent {
   public toasterconfig : ToasterConfig = 
     new ToasterConfig({animation: 'flyDown'});
+
 }
