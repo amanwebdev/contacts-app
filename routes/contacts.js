@@ -27,7 +27,8 @@ router.post('/', passport.authenticate('jwt', {
             name: req.body.name,
             email: req.body.email,
             phone: req.body.phone,
-            category: req.body.category
+            category: req.body.category,
+            imageData:req.body.imageData
         }
     }, {new: true}, function(err, doc){
         if(err){
@@ -45,7 +46,8 @@ router.put('/', passport.authenticate('jwt', {
       name: req.body.name,
       email: req.body.email,
       phone: req.body.phone,
-      category: req.body.category
+      category: req.body.category,
+      imageData:req.body.imageData
     });
     newContact.save(function(err,doc) {
       if (err) {

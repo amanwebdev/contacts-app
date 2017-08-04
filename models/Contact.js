@@ -19,6 +19,10 @@ var ContactSchema = new Schema({
     category: {
         type: String,
         required: false,
+    },
+    imageData: {
+        type: String,
+        required: false
     }
 });
 

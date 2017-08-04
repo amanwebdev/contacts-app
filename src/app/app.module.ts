@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ToasterModule } from 'angular2-toaster';
 import { LoginRoutingModule } from './login-routing.module';
 import { ContactService } from './contact.service';
+import { ImageCropperComponent } from 'ng2-img-cropper';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ContactService } from './contact.service';
     ContactsComponent,
     ContactComponent,
     LoginForm,
-    RegisterForm
+    RegisterForm,
+    ImageCropperComponent
   ],
   imports: [
     BrowserModule,

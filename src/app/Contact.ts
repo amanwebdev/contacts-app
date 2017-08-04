@@ -5,7 +5,8 @@ export class Contact{
         public name:string='',
         public email:string='',
         public phone:string='',
-        public category:string=''
+        public category:string='',
+        public imageData:string=''
     )
     {}
 }

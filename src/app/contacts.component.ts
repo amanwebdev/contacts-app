@@ -30,7 +30,7 @@ export class ContactsComponent {
 
   fetchContacts() {
     this.contactService.findAll().subscribe(res => {
-      let temp = res.map(c => new Contact(c._id, c.name, c.email, c.phone, c.category))
+      let temp = res.map(c => new Contact(c._id, c.name, c.email, c.phone, c.category, c.imageData))
       this.contacts = temp;
       this.subscribeToSearch();
     });

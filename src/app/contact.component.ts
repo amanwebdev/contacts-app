@@ -23,7 +23,7 @@ export class ContactComponent {
     this.route.params.subscribe(params => {
       let id = params['id'];
       return this.contactService.findById(id).subscribe(c => 
-        this.contact = new Contact(c._id,c.name,c.email,c.phone,c.category));
+        this.contact = new Contact(c._id,c.name,c.email,c.phone,c.category,c.imageData));
     });
   }
 
