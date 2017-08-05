@@ -13,7 +13,7 @@ var users = require('./routes/users');
 var contacts = require('./routes/contacts');
 var app = express();
 
-mongoose.connect(config.database.local);
+mongoose.connect(config.database.mLab);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
