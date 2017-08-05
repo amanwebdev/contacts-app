@@ -1,31 +1,27 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactService } from './contact.service';
-import { Contact } from './Contact';
+import { Contact, ContactEnum } from './Contact';
 import { ToasterService } from 'angular2-toaster';
 
 @Component({
   selector: 'contacts',
   templateUrl: './contacts.component.html',
-  styles: ['']
+  styleUrls: ['contacts.component.css']
 })
 export class ContactsComponent {
   contacts: Array<Contact>;
   filteredContacts: Array<Contact>;
   selectedContacts: Array<Contact>;
 
-
   constructor(
     private toasterService: ToasterService,
     private contactService: ContactService,
     private router: Router
-  ) { }
+  ){}
 
   ngOnInit() {
     this.fetchContacts();
-
-
-
   }
 
   fetchContacts() {

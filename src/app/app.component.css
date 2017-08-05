@@ -94,3 +94,12 @@ input[type=checkbox]:checked:after {
     border: 1px solid black;
     padding: 20px 20px;
 }
+.app-loader{
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+.app-loader>div>div{
+    background:#2a56c6;
+    
+}

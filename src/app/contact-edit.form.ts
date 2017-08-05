@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Contact } from './Contact';
+import { Contact, ContactEnum } from './Contact';
 import { ContactService } from './contact.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
@@ -12,7 +12,7 @@ import {ImageCropperComponent, CropperSettings, Bounds} from 'ng2-img-cropper';
 })
 export class ContactEditForm {
   contact:Contact;
-
+  categories = ContactEnum;
   @ViewChild('cropper', undefined) cropper:ImageCropperComponent;
 
   cropperSettings:CropperSettings;
@@ -65,7 +65,6 @@ export class ContactEditForm {
   }
 
   cropped(){
-    //console.log(this.data.image)
     this.contact.imageData = this.data.image;
   }
 

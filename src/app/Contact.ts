@@ -10,3 +10,9 @@ export class Contact{
     )
     {}
 }
+
+export enum ContactEnum {
+    Family = 1,
+    Friend = 2,
+    Professional = 3
+}

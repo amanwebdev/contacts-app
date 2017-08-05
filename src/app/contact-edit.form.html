@@ -1,3 +1,12 @@
+<div class="app-loader" *ngIf="!contact" >
+     <div class="line-scale-pulse-out">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+     </div>
+</div>
+
 <div class="contact-container" *ngIf="contact">
     <form (ngSubmit)="saveContact()" #contactForm="ngForm">
         <div class="field">
@@ -46,9 +55,7 @@
             <div class="control">
                 <div class="select">
                     <select class="form-control" required [(ngModel)]="contact.category" name="category" #category="ngModel">
-                        <option value="0">Family</option>
-                        <option value="1">Friend</option>
-                        <option value="2">Professional</option>
+                        <option *ngFor="let item of categories | keys" [value]="item.key">{{item.value}}</option>
                     </select>
                 </div>
             </div>

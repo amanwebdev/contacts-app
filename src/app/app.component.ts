@@ -10,7 +10,8 @@ import { AuthService } from './auth.service';
               './app.component.css',
               '../../node_modules/bulma/css/bulma.css',
               '../../node_modules/font-awesome/css/font-awesome.min.css',
-              '../../node_modules/angular2-toaster/toaster.css'
+              '../../node_modules/angular2-toaster/toaster.css',
+              '../../node_modules/loaders.css/loaders.min.css'
             ]
 })
 export class AppComponent {

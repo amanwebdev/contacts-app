@@ -15,6 +15,8 @@ import { ToasterModule } from 'angular2-toaster';
 import { LoginRoutingModule } from './login-routing.module';
 import { ContactService } from './contact.service';
 import { ImageCropperComponent } from 'ng2-img-cropper';
+import { LoadersCssModule } from 'angular2-loaders-css';
+import { KeysPipe } from './keys.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ImageCropperComponent } from 'ng2-img-cropper';
     ContactComponent,
     LoginForm,
     RegisterForm,
-    ImageCropperComponent
+    ImageCropperComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { ImageCropperComponent } from 'ng2-img-cropper';
     AppRoutingModule,
     BrowserAnimationsModule,
     ToasterModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    LoadersCssModule
   ],
   providers: [ ContactService ],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@
     </a>
   </div>
 
-  <div class="navbar-item nav-search">
+  <div class="navbar-item nav-search" *ngIf="authService.isLoggedIn">
     <input type="text" placeholder="Search" [(ngModel)]="searchText"
 						   (keyup) = "filterContactsByText()"/>
   </div>

@@ -1,3 +1,12 @@
+<div class="app-loader" *ngIf="!contact" >
+     <div class="line-scale-pulse-out">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+     </div>
+</div>
+
 <div class="contact-container" *ngIf="contact">
     <div class="header">
         <div class="header-item contact-img">
@@ -44,7 +53,7 @@
                     <i class="fa fa-info-circle" aria-hidden="true"></i>
                 </div>
                 <div class="cell">
-                    {{contact.category}}
+                    {{ContactEnum[contact.category]}}
                 </div>
             </div>
         </div>
