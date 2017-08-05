@@ -3,7 +3,7 @@ module.exports = {
     secret: 'mykey'
   },
   database: {
-    local: 'mongodb://localhost/heroku_v15h1fz7',
-    mLab: ''
+    local: 'mongodb://localhost/contacts-db',
+    mLab: process.env.MONGODB_URI
   }
 };
