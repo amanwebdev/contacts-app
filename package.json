@@ -6,10 +6,11 @@
     "ng": "ng",
     "start": "node ./bin/www",
     "build": "ng build --prod --aot",
+    "dev": "ng serve && node ./bin/www",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "npm install -g @angular/cli@latest",
+    "preinstall": "npm install -g @angular/cli@latest && npm install --save @angular/compiler@latest",
     "postinstall": "ng build"
   },
   "dependencies": {

@@ -44,3 +44,22 @@
     text-align: center;
     width: 60px;
 }
+.header-item .title{
+        display:inline-block;
+}
+
+@media (max-width: 360px) {
+    .contact-container{
+        min-height: 100%;
+    }
+    .header-item{
+        display:block;
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 1024px) {
+    .contact-container{
+        width: 50%;
+        margin: 50px auto;
+    }
+}

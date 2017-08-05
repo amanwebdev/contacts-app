@@ -16,15 +16,16 @@
         </div>
         <div class="header-item">
             <h2 class="title">{{contact.name}}</h2>
+            <span>
+                <a class="contact-control" (click)="$event.stopPropagation();deleteContact()">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </a>
+                <a class="contact-control" (click)="editContact()">
+                    <i class="fa fa-pencil" aria-hidden="true" ></i>
+                </a>
+            </span>
         </div>
-        <div class="header-item">
-            <a class="contact-control" (click)="$event.stopPropagation();deleteContact()">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
-            </a>
-            <a class="contact-control" (click)="editContact()">
-                <i class="fa fa-pencil" aria-hidden="true" ></i>
-            </a>
-        </div>
+        
     </div>
     <div class="detail">
         <div class="detail-item">

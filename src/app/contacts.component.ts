@@ -6,7 +6,9 @@ import { ToasterService } from 'angular2-toaster';
 
 @Component({
   selector: 'contacts',
-  templateUrl: './contacts.component.html',
+  templateUrl: 
+                "./" + (window.screen.width > 900 ? 
+                "contacts.dektop.html" :  "contacts.mobile.html"),
   styleUrls: ['contacts.component.css']
 })
 export class ContactsComponent {
