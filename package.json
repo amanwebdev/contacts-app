@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ex-start": "node ./bin/www",
-    "postinstall": "./node_modules/@angular/cli/bin/ng build"
+    "postinstall": "npm install -g @angular/cli@latest && ng build"
   },
   "dependencies": {
     "@angular/animations": "^4.3.3",
