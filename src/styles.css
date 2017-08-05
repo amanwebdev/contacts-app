@@ -5,3 +5,6 @@ body{
 a{
     color:black !important;
 }
+.is-primary{
+    background-color:#2a56c6 !important;
+}

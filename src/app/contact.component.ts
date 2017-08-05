@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Contact } from './Contact';
+import { Contact, ContactEnum } from './Contact';
 import { ContactService } from './contact.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ToasterService } from 'angular2-toaster';
@@ -11,7 +11,8 @@ import { ToasterService } from 'angular2-toaster';
 })
 export class ContactComponent {
   contact: Contact;
-
+  contactEnum = ContactEnum;
+  
   constructor(
     private toasterService: ToasterService,
     private contactService: ContactService,

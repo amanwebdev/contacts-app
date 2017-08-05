@@ -14,7 +14,7 @@
                 <img-cropper #cropper [image]="data" [settings]="cropperSettings" 
                 (onCrop)="cropped()"></img-cropper>
                 <div class="file-upload">
-                    <input id="custom-input" type="file" (change)="fileChangeListener($event)">
+                    <input id="custom-input" type="file" (change)="fileChangeListener($event)" class="photo">
                 </div>
             </figure>
         </div>
