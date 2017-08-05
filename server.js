@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
+var compression = require('compression')
 
 var config = require('./config');
 
@@ -18,7 +19,7 @@ mongoose.connect(config.database.mLab);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-;
+app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
