@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class VinovePage {
+export class ContactsPage {
   navigateTo() {
     return browser.get('/');
   }

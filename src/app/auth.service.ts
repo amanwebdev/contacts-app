@@ -15,7 +15,7 @@ export class AuthService {
   redirectUrl: string;
 
   public token: string;
-  baseUrl = 'http://localhost:80/api/users/';
+  baseUrl = '/api/users/';
 
   constructor(private httpClient: HttpClient) {
     this.login();
@@ -36,12 +36,13 @@ export class AuthService {
     return this.httpClient.post(`${this.baseUrl}/auth`, loginInfo,
       { headers:  this.getDefaultHeader(), observe: 'response', responseType: 'json' })
       .map((response: HttpResponse<any>) => {
-        this.isLoggedIn = true;
+        
         let token = response.body.token;
 
         if (token) {
           this.token = token;
           localStorage.setItem('user', JSON.stringify({ username: "username", token: token }));
+          this.isLoggedIn = true;
           return true;
         } else {
           return false;

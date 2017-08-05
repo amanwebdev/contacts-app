@@ -1,14 +1,14 @@
-import { VinovePage } from './app.po';
+import { ContactsPage } from './app.po';
 
-describe('vinove App', () => {
-  let page: VinovePage;
+describe('contacts App', () => {
+  let page: ContactsPage;
 
   beforeEach(() => {
-    page = new VinovePage();
+    page = new ContactsPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });
