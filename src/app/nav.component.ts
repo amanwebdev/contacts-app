@@ -9,7 +9,7 @@ import { ContactService } from './contact.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  constructor(private authService: AuthService, 
+  constructor(public authService: AuthService, 
     private contactService:ContactService, private router: Router) {}
 
   public logout(){

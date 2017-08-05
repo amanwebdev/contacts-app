@@ -50,11 +50,13 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 // Routes
-app.get('/', function (req, res) {
-  res.send('Contacts API')
-})
-app.use('/users', users);
-app.use('/contacts', contacts);
+
+app.use('/api/users', users);
+app.use('/api/contacts', contacts);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
 
 /**
  * Error handlers

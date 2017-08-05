@@ -15,7 +15,7 @@ export class AuthService {
   redirectUrl: string;
 
   public token: string;
-  baseUrl = 'http://localhost:3000/users/';
+  baseUrl = 'http://localhost:80/api/users/';
 
   constructor(private httpClient: HttpClient) {
     this.login();
