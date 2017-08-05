@@ -10,12 +10,15 @@ import { ContactService } from './contact.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
+  showMobileMenu = false;
+
   constructor(public authService: AuthService, 
     private contactService:ContactService, private router: Router) {}
 
   public logout(){
     this.authService.logout();
-    this.router.navigateByUrl('/login')
+    this.router.navigateByUrl('/login');
+    this.toggleMobileMenu();
   }
 
   searchText:string;
@@ -23,5 +26,9 @@ export class NavComponent {
   public filterContactsByText(){
     console.log('search text '+this.searchText);
     this.contactService.searchTextSubject.next(this.searchText);
+  }
+
+  public toggleMobileMenu(){
+    this.showMobileMenu = !this.showMobileMenu;
   }
 }

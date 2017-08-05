@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "preinstall": "npm install -g @angular/cli@latest && npm install --save @angular/compiler@latest",
-    "postinstall": "ng build"
+    "postinstall": "ng build --prod --aot"
   },
   "dependencies": {
     "@angular/animations": "^4.3.3",

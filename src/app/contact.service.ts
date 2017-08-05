@@ -11,8 +11,8 @@ import { BehaviorSubject } from "rxjs";
 
 @Injectable()
 export class ContactService {
-    private baseUrl = "http://localhost:8080/api/contacts/";
-    //private baseUrl = "/api/contacts/";
+    //private baseUrl = "http://localhost:8080/api/contacts/";
+    private baseUrl = "/api/contacts/";
     searchTextSubject = new BehaviorSubject<string>('');
 
     constructor(private http: HttpClient, private authService: AuthService) {

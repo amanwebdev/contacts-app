@@ -27,7 +27,7 @@
 
         <div class="field is-grouped">
             <div class="control">
-                <button class="button is-primary" type="submit" [disabled]="!registerForm.form.valid">Register</button>
+                <button class="button is-primary" type="submit" [disabled]="!registerForm.form.valid"  [class.is-loading]="regsitering">Register</button>
                 <div class="register">
                     <span class="new-user-txt">Existing User?</span>
                     <button class="button is-primary" routerLink="/login">Login</button>

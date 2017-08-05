@@ -8,11 +8,14 @@ import { AuthService } from './auth.service';
   styleUrls: ['./login.form.css']
 })
 export class LoginForm {
+  loggingIn : boolean = false;
+
   constructor(private authService: AuthService, private router: Router) {}
 
   loginInfo = {username:'', password:''}
 
   public login(){
+    this.loggingIn = true;
     this.authService.authenticate(this.loginInfo).subscribe((loggedIn)=>{
       if(loggedIn){
         this.router.navigateByUrl('/')
