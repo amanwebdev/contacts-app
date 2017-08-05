@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ex-start": "node ./bin/www"
+    "ex-start": "node ./bin/www",
+    "postinstall": "ng build"
   },
   "dependencies": {
     "@angular/animations": "^4.3.3",
