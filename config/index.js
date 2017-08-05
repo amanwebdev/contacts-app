@@ -3,7 +3,7 @@ module.exports = {
     secret: 'mykey'
   },
   database: {
-    local: 'mongodb://localhost/jwtapi',
+    local: 'mongodb://localhost/contacts-db',
     mLab: ''
   }
 };
