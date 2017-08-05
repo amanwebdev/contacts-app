@@ -81,7 +81,9 @@ export class ContactEditForm {
     myReader.readAsDataURL(file);
   }
 
-  saveContact(){
+  saveContact(valid){
+    if(!valid)
+      return;
     console.log('contact '+JSON.stringify(this.contact));
     if(this.contact.id!=null){
         this.contactService.saveContact(this.contact)
